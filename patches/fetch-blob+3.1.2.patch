@@ -1,0 +1,21 @@
+diff --git a/node_modules/fetch-blob/streams.cjs b/node_modules/fetch-blob/streams.cjs
+index 56b7388..4dd92ae 100644
+--- a/node_modules/fetch-blob/streams.cjs
++++ b/node_modules/fetch-blob/streams.cjs
+@@ -3,12 +3,12 @@
+ const POOL_SIZE = 65536;
+ 
+ if (!globalThis.ReadableStream) {
+-  try {
+-    Object.assign(globalThis, require('stream/web'))
+-  } catch (error) {
++  // try {
++  //   Object.assign(globalThis, require('stream/web'))
++  // } catch (error) {
+ 		// TODO: Remove when only supporting node >= 16.5.0
+     Object.assign(globalThis, require('web-streams-polyfill/dist/ponyfill.es2018.js'))
+-  }
++  // }
+ }
+ 
+ try {
