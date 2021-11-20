@@ -6,6 +6,7 @@
 
 1. You can `require("node-fetch-commonjs")` directly.
 2. You will not see the `ExperimentalWarning: stream/web is an experimental feature` warning.
+3. It works on older Node.js versions that don’t support [requiring built-in modules with a `node:` prefix](https://github.com/node-fetch/node-fetch/issues/1367).
 
 ## Build
 
