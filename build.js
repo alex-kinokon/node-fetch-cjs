@@ -42,7 +42,7 @@ async function main() {
 
   pkg.main = "index.js"
   pkg.name = "node-fetch-commonjs"
-  pkg.version = "3.1.0"
+  pkg.version = "3.1.1"
   pkg.type = "commonjs"
   pkg.repository.url = execSync("git config --get remote.origin.url").toString().trim()
   pkg.dependencies["web-streams-polyfill"] = "^3.1.1"
@@ -58,7 +58,7 @@ async function main() {
   delete pkg.runkitExampleFilename
 
   await fs.copy(`${NODE_FETCH}/LICENSE.md`, "lib/LICENSE.md")
-  await fs.copy(`${NODE_FETCH}/README.md`, "lib/README.md")
+  await fs.copy("README.md", "lib/README.md")
   await fs.copy(`${NODE_FETCH}/@types/index.d.ts`, "lib/index.d.ts")
   await fs.writeJSON("lib/package.json", pkg, { spaces: 2 })
 
