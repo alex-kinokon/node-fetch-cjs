@@ -1,6 +1,6 @@
 # node-fetch-commonjs
 
-[node-fetch](https://github.com/node-fetch/node-fetch) but in a single-file CommonJS format.
+[node-fetch](https://github.com/node-fetch/node-fetch) 3.1.0 but in CommonJS format.
 
 ## Differences
 
