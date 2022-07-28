@@ -1,13 +1,27 @@
 {
-  "name": "node-fetch-cjs",
+  "name": "@yasoonofficial/node-fetch-cjs",
   "version": "0.1.1",
   "dependencies": {
     "node-fetch": "^3.1.0"
   },
   "scripts": {
-    "build": "./build.js",
+    "build": "node ./build.js",
+    "prepare": "npm run build",
     "postinstall": "patch-package"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yasoonOfficial/node-fetch-cjs.git",
+    "directory": "packages/node-fetch-cjs"
+  },
+  "sideEffects": false,
+  "files": [
+    "lib/"
+  ],
+  "main": "lib/index.js",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.8",
     "@rollup/plugin-node-resolve": "^13.0.5",
@@ -16,13 +30,5 @@
     "fs-extra": "^10.0.0",
     "patch-package": "^6.4.7",
     "rollup": "^2.58.0"
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "tabWidth": 2,
-    "printWidth": 90,
-    "semi": false,
-    "singleQuote": false,
-    "trailingComma": "es5"
   }
 }
