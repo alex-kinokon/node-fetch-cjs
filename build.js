@@ -17,7 +17,9 @@ async function main() {
 
   const bundle = await rollup({
     input: `${NODE_FETCH}/src/index.js`,
-    external: Object.keys(pkg.dependencies).concat(builtinModules),
+    external: Object.keys(pkg.dependencies)
+      .concat(builtinModules)
+      .concat("node-domexception"),
     plugins: [
       alias({
         entries: [
@@ -42,7 +44,7 @@ async function main() {
 
   pkg.main = "index.js"
   pkg.name = "node-fetch-commonjs"
-  pkg.version = "3.1.1"
+  pkg.version = "3.2.4"
   pkg.type = "commonjs"
   pkg.repository.url = execSync("git config --get remote.origin.url").toString().trim()
   pkg.dependencies["web-streams-polyfill"] = "^3.1.1"
@@ -62,17 +64,10 @@ async function main() {
   await fs.copy(`${NODE_FETCH}/@types/index.d.ts`, "lib/index.d.ts")
   await fs.writeJSON("lib/package.json", pkg, { spaces: 2 })
 
-  const interop = "Object.defineProperty(exports, '__esModule', { value: true });"
-
   const source = await fs.readFile("lib/index.js", "utf-8")
   await fs.writeFile(
     "lib/index.js",
-    source
-      .replace(interop, "")
-      .replace(
-        /(var index = .+\n)/,
-        `$1module.exports = exports = index.fetch;\n${interop}\n`
-      )
+    source.replace(/('use strict';)/, "exports = module.exports = fetch;\n$1")
   )
 }
 
