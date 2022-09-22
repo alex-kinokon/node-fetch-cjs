@@ -1,4 +1,8 @@
+**NEW!** Want to just `require` any ES module with zero setup? Try [`esm-hook`](https://github.com/proteriax/esm-hook).
+
+
 # node-fetch-commonjs
+
 
 [node-fetch](https://github.com/node-fetch/node-fetch) but in CommonJS format. This module is built from `node-fetch` directly.
 
