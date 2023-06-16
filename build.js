@@ -44,7 +44,7 @@ async function main() {
 
   pkg.main = "index.js"
   pkg.name = "node-fetch-commonjs"
-  pkg.version = "3.2.4"
+  pkg.version = "3.3.1"
   pkg.type = "commonjs"
   pkg.repository.url = execSync("git config --get remote.origin.url").toString().trim()
   pkg.dependencies["web-streams-polyfill"] = "^3.1.1"
