@@ -5,7 +5,7 @@
 ## Version check
 
 ![Latest upstream version](https://img.shields.io/npm/v/node-fetch?label=latest%20upstream)
-![Current upstream version](https://img.shields.io/badge/current%20upstream-v3.3.1-brightgreen)
+![Current upstream version](https://img.shields.io/badge/current%20upstream-v3.3.2-brightgreen)
 
 ## Differences
 

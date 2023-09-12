@@ -47,7 +47,10 @@ async function main() {
   pkg.version = "3.3.1"
   pkg.type = "commonjs"
   pkg.repository.url = execSync("git config --get remote.origin.url").toString().trim()
-  pkg.dependencies["web-streams-polyfill"] = "^3.1.1"
+  const fetchPkg = require("fetch-blob/package.json")
+  pkg.dependencies ??= {}
+  Object.assign(pkg.dependencies, fetchPkg.dependencies)
+  delete pkg.dependencies["formdata-polyfill"]
   delete pkg.homepage
   delete pkg.files
   delete pkg.scripts

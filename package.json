@@ -2,20 +2,18 @@
   "name": "node-fetch-cjs",
   "version": "0.1.1",
   "dependencies": {
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.2"
   },
   "scripts": {
-    "build": "./build.js",
-    "postinstall": "patch-package"
+    "build": "./build.js"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.0.0",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "@types/fs-extra": "^9.0.13",
-    "@types/node": "^18.7.18",
-    "fs-extra": "^10.1.0",
-    "patch-package": "^6.4.7",
-    "rollup": "^3.25.1"
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.6.0",
+    "fs-extra": "^11.1.1",
+    "rollup": "^3.29.1"
   },
   "prettier": {
     "arrowParens": "avoid",
